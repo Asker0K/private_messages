@@ -64,7 +64,7 @@ def index():
                 continue
             break
         cipher_note = Note(number=rnumber, ciptext=str_cipher_text)
-        link = f'{app.config["SITE_URL"]}/{rnumber}/{str.key}'
+        link = f'{app.config["SITE_URL"]}/{rnumber}/{str_key}'
         db.session.add(cipher_note)
         db.session.commit()
         return render_template('complete.html', link = link)
