@@ -73,7 +73,7 @@ def index():
 
 @app.route('/<rnumber>/<str_key>')
 def question(rnumber, str_key):
-    link = f'{app.config["SITE_URL"]}/decrypt/{rnumber}/str_key'
+    link = f'{app.config["SITE_URL"]}/decrypt/{rnumber}/{str_key}'
     return render_template('question.html', link=link)
 
 
