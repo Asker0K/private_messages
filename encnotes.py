@@ -10,11 +10,13 @@ from flask_sslify import SSLify
 from wtforms import TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Length
 
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config():
     SECRET_KEY = os.getenv('SECRET_KEY')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLAlCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+                              'sqlite:///' + os.path.join(basedir, 'app.db')
     SITE_URL = 'https://privatemessagesasker.herokuapp.com/' # change later !
 
 app = Flask(__name__)
