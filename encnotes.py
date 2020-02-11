@@ -15,7 +15,7 @@ class Config():
     SECRET_KEY = os.getenv('SECRET_KEY')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLAlCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
-    SITE_URL = 'https://encnote.herokuapp.com' # change later !
+    SITE_URL = 'https://privatemessagesasker.herokuapp.com/' # change later !
 
 app = Flask(__name__)
 app.config.from_object(Config)
